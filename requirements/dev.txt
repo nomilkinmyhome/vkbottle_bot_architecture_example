@@ -1,0 +1,7 @@
+git+https://github.com/timoniq/vkbottle.git
+SQLAlchemy==1.4.0b1
+asyncpg
+alembic
+python-dotenv
+flake8
+pytest
