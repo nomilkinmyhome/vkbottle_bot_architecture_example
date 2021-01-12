@@ -1,3 +1,5 @@
+"""Blueprint для примера."""
+
 from vkbottle.bot import Blueprint, Message
 
 from src.use_cases.complex_calculations import calculate_something

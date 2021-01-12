@@ -1,3 +1,5 @@
+"""Blueprint для примера."""
+
 from vkbottle.bot import Blueprint, Message
 
 from src.repositories.user import UserRepository
