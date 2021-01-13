@@ -1,9 +1,8 @@
-from src.blueprints.user import info_handler
-from src.blueprints.complex_calculations import calculation_handler
+from src.blueprints import user, complex_calculations
 
 bps = (
-    info_handler,
-    calculation_handler,
+    user.bp,
+    complex_calculations.bp,
 )
 
 __all__ = ('bps',)
