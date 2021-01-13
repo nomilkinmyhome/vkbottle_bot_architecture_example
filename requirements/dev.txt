@@ -1,7 +1,6 @@
 git+https://github.com/timoniq/vkbottle.git
 SQLAlchemy==1.4.0b1
 asyncpg
-alembic
 envparse
 flake8
 pytest
