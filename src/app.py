@@ -2,12 +2,12 @@
 import logging
 
 from vkbottle.bot import Bot
+from vkbottle.tools.dev_tools.loop_wrapper import LoopWrapper
 
 from src.blueprints import bps
 from src.config import BOT_TOKEN
-from src.middlewares.no_bot_middleware import NoBotMiddleware
-from vkbottle.tools.dev_tools.loop_wrapper import LoopWrapper
 from src.initialize import setup_db
+from src.middlewares.no_bot_middleware import NoBotMiddleware
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
