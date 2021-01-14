@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  web:
+    build: .
+    depends_on:
+      - db
+
+  db:
+    image: postgres:12
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - .env
+
+volumes:
+  postgres_data:
