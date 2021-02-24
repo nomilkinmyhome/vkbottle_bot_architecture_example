@@ -20,7 +20,7 @@ def init_bot():
     (к примеру, redis) или прочие настройки, которые нужны проекту.
     """
     bot_ = Bot(token=BOT_TOKEN,
-               loop_wrapper=LoopWrapper(on_startup=(setup_db(),)))
+               loop_wrapper=LoopWrapper(on_startup=(await setup_db())))
     setup_blueprints(bot_)
     setup_middlewares(bot_)
     return bot_
