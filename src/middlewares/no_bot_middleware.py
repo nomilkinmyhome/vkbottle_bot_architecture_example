@@ -1,8 +1,8 @@
-from vkbottle import BaseMiddleware
+from vkbottle import BaseMiddleware, MiddlewareResponse
+from vkbottle.bot import Message
 
 
 class NoBotMiddleware(BaseMiddleware):
     """Проверяет, что тот, кто дал команду боту, сам не является ботом."""
-    async def pre(self):
-        if self.event.from_id < 0:
-            self.stop("Отправитель является ботом")
+    async def pre(self, message: Message):
+        return MiddlewareResponse(message.from_id > 0)
