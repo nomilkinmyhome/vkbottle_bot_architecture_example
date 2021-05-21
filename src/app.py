@@ -34,7 +34,7 @@ def setup_blueprints(bot_: Bot):
 
 def setup_middlewares(bot_: Bot):
     """Инициализация middlewares."""
-    bot_.labeler.message_view.register_middleware(NoBotMiddleware)
+    bot_.labeler.message_view.register_middleware(NoBotMiddleware())
 
 
 bot = init_bot()
