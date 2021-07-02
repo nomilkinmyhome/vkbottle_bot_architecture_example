@@ -1,5 +1,3 @@
-import random
-
 from vkbottle import Keyboard, KeyboardButtonColor, Callback
 from vkbottle.bot import Blueprint, Message
 from vkbottle_types import GroupTypes
