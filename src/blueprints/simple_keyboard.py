@@ -5,6 +5,8 @@ from vkbottle.bot import Blueprint, Message
 from vkbottle_types import GroupTypes
 from vkbottle_types.events import GroupEventType
 
+from src.use_cases.random_number import get_random_number
+
 bp = Blueprint()
 
 # vbml_ignore_case включаем чтобы бот обрабатывал сообщение в любом регистре
@@ -22,7 +24,7 @@ random_number_keyboard = (
 
 @bp.on.message(text=["!число"])
 async def random_number(message: Message):
-    number = random.randint(1, 100)
+    number = get_random_number()
 
     await message.answer(f"Выпало число — {number}!", keyboard=random_number_keyboard)
 
@@ -30,7 +32,7 @@ async def random_number(message: Message):
 @bp.on.raw_event(GroupEventType.MESSAGE_EVENT, dataclass=GroupTypes.MessageEvent)
 async def message_event(event: GroupTypes.MessageEvent):
     if event.object.payload["cmd"] == "more_numbers":
-        number = random.randint(1, 100)
+        number = get_random_number()
 
         await bp.api.messages.edit(
             peer_id=event.object.peer_id,
